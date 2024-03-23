@@ -85,9 +85,10 @@ public struct PSVideo: Identifiable, Codable, Equatable {
         public var link: String
 
         /// A collection of possible video qualities `[hd, sd, hls]`.
-        public enum Quality: String, Codable {
-            case hd, sd, hls
-        }
+//        public enum Quality: String, Codable {
+//            case hd, sd, hls
+//        }
+       public typealias Quality = String // replace enum of limited values for possible changes (hd, sd, hls, uhd, etc.)
     }
 
     /// A structure representing a preview picture of a video.
@@ -107,4 +108,10 @@ public struct PSVideo: Identifiable, Codable, Equatable {
         /// The index in the array.
         public var index: Int
     }
+}
+
+public extension String{
+   static let hd = "hd"
+   static let sd = "sd"
+   static let hls = "hls"
 }
